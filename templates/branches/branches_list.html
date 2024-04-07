@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Список филиалов</h2>
+<ul>
+{%for br in branch%}
+<a href="{% url 'branches_detail' br.id %}"><li>{{br.title}}{{br.id}}{{br.text}}</li></a>
+    {%endfor%}
+</ul>
+{% endblock %}

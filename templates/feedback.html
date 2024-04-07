@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Это главная страница!</h1>
+<h1>Отзывы:</h1>
+<ul>
+{% for item in back%}
+    <li>{{item.title}}<br>
+    {{item.text}}
+    </li>
+{%endfor%}
+</ul>
+<form action="#" method="post">
+    {% csrf_token %}
+  <label for="title">Название</label><br>
+  <input type="text" name="title"><br>
+  <label for="text">Описание</label><br>
+  <input type="text" name="text"><br><br>
+  <input type="submit" value="Submit">
+</form>
+
+{% endblock %}

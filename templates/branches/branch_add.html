@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Добавить филиал</h2>
+
+<!--<form action="#" method="post">-->
+<!--    {% csrf_token %}-->
+<!--  <label for="title">Добавить филиал</label><br>-->
+<!--  <input type="text" name="title"><br>-->
+<!--  <label for="text">Добавить описание</label><br>-->
+<!--  <input type="text" name="text"><br><br>-->
+<!--  <input type="submit" value="Submit">-->
+<!--</form>-->
+
+<form action="#" method="post">
+ {% csrf_token %}
+{{branch_form.as_table}}
+  <input type="submit" value="Submit">
+</form>
+
+{% endblock %}

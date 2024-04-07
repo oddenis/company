@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!--#БЕЗ FORMS-->
+
+<!--<h2>Добавить новость</h2>-->
+<!--{%for item in news%}-->
+<!--<h2>{{item.topic}}</h2><br>-->
+<!--{{item.news_content}}<br>-->
+<!--{{item.author}}<br><br>-->
+<!--{{item.date_news}}<br><br><br>-->
+<!--{%endfor%}-->
+
+
+<!--<form action="#" method="post">-->
+<!--    {% csrf_token %}-->
+<!--  <label for="topic">Добавить заголовок</label><br>-->
+<!--  <input type="text" name="topic"><br>-->
+<!--  <label for="news_content">Добавить новость</label><br>-->
+<!--  <input type="text" name="news_content"><br><br>-->
+<!--    <label for="author">Добавить новость</label><br>-->
+<!--  <input type="text" name="author"><br><br>-->
+<!--  <input type="submit" value="Создать">-->
+
+<!--</form>-->
+
+<!--#FORMS-->
+
+<h2>Добавить новость</h2>
+{%for item in news%}
+<h2>{{item.topic}}</h2><br>
+{{item.news_content}}<br>
+{{item.categoria}}<br><br>
+{{item.author}}<br><br>
+
+{{item.date_news}}<br><br><br>
+{%endfor%}
+
+
+<form action="#" method="post">
+    {% csrf_token %}
+ {{newsform.as_p}}
+  <input type="submit" value="Создать">
+
+</form>
+
+{% endblock %}

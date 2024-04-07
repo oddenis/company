@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Это главная страница</h2>
+
+<h2>Список разделов</h2>
+<ul>
+    <li><a href="{% url 'about' %}">О компании</a></li>
+    <li><a href="{% url 'contacts' %}">Контакты</a></li>
+    <li><a href="{% url 'branches' %}">Филиалы</a></li>
+    <li><a href="{% url 'addnews' %}">Новости</a></li>
+</ul>
+{% endblock %}
