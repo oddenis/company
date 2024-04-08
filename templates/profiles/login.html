@@ -2,12 +2,34 @@
 
 {% block content %}
 <h1>Страница входа</h1>
+<div class="col-md-4">
 <form method="post" action="{% url 'plogin'%}">
     {% csrf_token %}
-    {{login_form}}
-    <button style="submit"> login </button>
+{{ login_form.non_field_errors }}
+    <div class="mb-3">
+        {{ login_form.username.errors }}
+    <label for="{{login_form.username.id_for_label}}" class="form-label">LOGIN</label>
+  {{login_form.username}}
+    </div>
+
+  <div class="mb-3">
+      {{ login_form.password.errors }}
+    <label for="{{login_form.password.id_for_label}}" class="form-label">Password</label>
+    {{login_form.password}}
+  </div>
 
 
+  <button type="submit" class="btn btn-primary">ВОЙТИ</button>
 </form>
+</div>
+
+<!--<form method="post" action="{% url 'plogin'%}">-->
+<!--    {% csrf_token %}-->
+<!--    {{login_form.errors}}-->
+<!--    {{login_form}}-->
+<!--    <button style="submit"> login </button>-->
+
+
+<!--</form>-->
 
 {% endblock %}

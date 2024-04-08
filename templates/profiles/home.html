@@ -2,6 +2,8 @@
 
 {% block content %}
 <h1>Личный кабинет {{request.user.username}}</h1>
-<a href="{% url 'plogin'%} ">ВЫЙТИ</a>
+<p>{{request.user.profile.bio}}</p>
+<br>
+<a href="{% url 'logoutuser'%} ">ВЫЙТИ</a>
 
 {% endblock %}
